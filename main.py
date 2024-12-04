@@ -14,17 +14,17 @@ sorted_arr = bubble_sort(array)
 print("Seřazené pole:", sorted_arr)
 
 
-def selection_sort(arr):
-    for i in range(len(arr)):
+def selection_sort(array):
+    for m in range(len(array)):
         
-        nejmenší = i
-        for j in range(i + 1, len(arr)):
-            if arr[j] < arr[nejmenší]:
-                nejmenší1 = j
+        nejmenší = m
+        for k in range(m + 1, len(array)):
+            if array[k] < array[nejmenší]:
+                nejmenší = k
         
-        arr[i], arr[nejmenší1] = arr[nejmenší1], arr[i]
-    return arr
+        array[m], array[nejmenší] = array[nejmenší], array[m]
+    return array
 
 
-sorted_arr_selection = selection_sort(arr.copy())
-print("Seřazené pole (Selection Sort):", sorted_arr_selection)
+sorted_arr_selection = selection_sort(array.copy())
+print("Seřazené pole Selection Sort:", sorted_arr_selection)
