@@ -11,18 +11,21 @@ def bubble_sort(array):
     return array
 
 
-sorted_arr = bubble_sort(array)
-print("Seřazené pole:", sorted_arr)
+sorted_array = bubble_sort(array)
+print("Bubble sort:", sorted_array)
 
-def bogosort(arrayb):
-    count = 0
-    while not is_sorted(arrayb):
-        random.shuffle(arrayb)
-        count += 1
-        print(f"Pokus {count}: {arrayb}")
-    print(f"Sorted array after {count} shuffles: ")
-    bogosort(arrayb)
-    print("Bogo",arrayb)
+
+def bogo_sort(array):
+    
+    def is_sorted(array):
+        return array == sorted(array)
+    
+    
+    while not is_sorted(array):
+        random.shuffle(array)  
+    return array
+sorted_array2 = bogo_sort(array.copy())
+print("Bogo Sort:", sorted_array2)
 
 
 def selection_sort(array):
@@ -37,5 +40,23 @@ def selection_sort(array):
     return array
 
 
-sorted_arr_selection = selection_sort(array.copy())
-print("Seřazené pole Selection Sort:", sorted_arr_selection)
+sorted_array3 = selection_sort(array.copy())
+print("Selection Sort:", sorted_array3)
+
+def insertion_sort(array):
+    for q in range(1, len(array)):
+        lol = array[q]
+        n = q - 1
+        
+        
+        while n >= 0 and array[n] > lol:
+            array[n + 1] = array[n]
+            n -= 1
+        
+        
+        array[n + 1] = lol
+    
+    return array
+
+sorted_array4 = insertion_sort(array.copy())
+print("Insertion Sort:", sorted_array4)
