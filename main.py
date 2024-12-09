@@ -31,12 +31,12 @@ print("Bogo Sort:", sorted_array2)
 def selection_sort(array):
     for m in range(len(array)):
         
-        nejmenší = m
+        o = m
         for k in range(m + 1, len(array)):
-            if array[k] < array[nejmenší]:
-                nejmenší = k
+            if array[k] < array[o]:
+                o = k
         
-        array[m], array[nejmenší] = array[nejmenší], array[m]
+        array[m], array[o] = array[o], array[m]
     return array
 
 
